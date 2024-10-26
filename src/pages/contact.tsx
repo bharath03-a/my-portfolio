@@ -7,10 +7,10 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Vignesh Kumar | Contact</title>
+        <title>Bharath Velamala | Contact</title>
         <meta
           name="description"
-          content="Contact Vignesh Kumar - A software engineer with 3+ years of experience."
+          content="Contact Bharath Velamala - A software engineer with 3+ years of experience."
         />
       </Head>
       <Layout>

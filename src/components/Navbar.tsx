@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-3xl font-extrabold tracking-wider">
-          Vignesh Kumar
+          Bharath Velamala
         </div>
 
         {/* Hamburger menu for mobile */}

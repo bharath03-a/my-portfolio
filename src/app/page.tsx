@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
 
-const roles = ["a Software Engineer", "a Tech Enthusiast", "a Lifelong Learner"];
+const roles = ["a Data Engineer", "a Data Science Learner", "a Machine Learning Enthusiast"];
 
 const roleVariants = {
   hidden: { opacity: 0, y: 10 },
@@ -39,7 +39,7 @@ export default function HomePage() {
             Hello World!
           </motion.h1>
 
-          {/* "My name is Vignesh Kumar" with motion effect */}
+          {/* "My name is Bharath Velamala" with motion effect */}
           <motion.h1
             className="text-5xl sm:text-4xl lg:text-6xl font-bold mt-4"
             initial={{ opacity: 0, y: -50 }}
@@ -48,7 +48,7 @@ export default function HomePage() {
           >
             My name is{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-              Vignesh Kumar
+              Bharath Velamala
             </span>
           </motion.h1>
 
@@ -83,8 +83,8 @@ export default function HomePage() {
           {/* Cool Resume Download Button with Silver/Golden Border */}
           <div className="mt-8">
             <a
-              href="/files/Vignesh_Resume.pdf"
-              download="Vignesh_Kumar_Resume.pdf"
+              href="/files/Bharath_Velamala_Resume_DE.pdf"
+              download="Bharath_Velamala_Resume_DE.pdf"
               className="relative inline-block text-lg font-semibold text-white px-8 py-4 rounded-lg shadow-lg transition-transform transform-gpu hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300"
               style={{
                 background: "linear-gradient(to right, transparent, black, transparent)",

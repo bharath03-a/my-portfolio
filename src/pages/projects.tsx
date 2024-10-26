@@ -10,10 +10,10 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title>Vignesh Kumar | Projects</title>
+        <title>Bharath Velamala | Projects</title>
         <meta
           name="description"
-          content="Projects done by Vignesh Kumar"
+          content="Projects done by Bharath Velamala"
         />
       </Head>
     <Layout>
