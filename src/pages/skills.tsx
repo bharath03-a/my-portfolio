@@ -4,26 +4,43 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout"; // Assuming you have a Layout component
 
 const skills = [
-  // AWS CDK, Typescript, React, Next Js
-  { name: "TypeScript", icon: "/icons/typescript.png" },
-  { name: "AWS CDK", icon: "/icons/aws-cdk.png" },
-  { name: "React", icon: "/icons/react.webp" },
-  { name: "NextJs", icon: "/icons/nextjs.png" },
-
-  // Java Stack
-  { name: "Java", icon: "./icons/java.png" },
-  { name: "Spring Boot", icon: "/icons/spring-boot.png" },
-  { name: "Microservices", icon: "/icons/microservices.png" },
-  { name: "AWS", icon: "/icons/aws.png" },
-
-  { name: "Python", icon: "/icons/python.png" },
-  { name: "MySQL", icon: "/icons/mysql.png" },
-  { name: "PostgreSQL", icon: "/icons/postgresql.png" },
-  { name: "Docker", icon: "/icons/docker.png" },
-
-  { name: "HTML", icon: "/icons/html.png" },
-  { name: "CSS", icon: "/icons/css.png" },
-  { name: "JavaScript", icon: "/icons/javascript.png" },
+  { name: "Airflow", icon: "/icons/airflow.svg" },
+  { name: "Apache Spark", icon: "/icons/apache-spark.svg" },
+  { name: "Asana", icon: "/icons/asana.svg" },
+  { name: "AWS", icon: "/icons/aws.svg" },
+  { name: "AWS EC2", icon: "/icons/aws-ec2.svg" },
+  { name: "AWS Lambda", icon: "/icons/aws-lambda.svg" },
+  { name: "AWS S3", icon: "/icons/aws-s3.svg" },
+  { name: "Conda", icon: "/icons/conda.svg" },
+  { name: "DBT", icon: "/icons/dbt.svg" },
+  { name: "Docker", icon: "/icons/docker.svg" },
+  { name: "Git", icon: "/icons/git-icon.svg" },
+  { name: "GitHub", icon: "/icons/github-icon.svg" },
+  { name: "Google Cloud", icon: "/icons/google-cloud.svg" },
+  { name: "Google Cloud Functions", icon: "/icons/google-cloud-functions.svg" },
+  { name: "Google Cloud Run", icon: "/icons/google-cloud-run.svg" },
+  { name: "Hadoop", icon: "/icons/hadoop.svg" },
+  { name: "HashiCorp", icon: "/icons/hashicorp.svg" },
+  { name: "Hugging Face", icon: "/icons/hugging-face.svg" },
+  { name: "Java", icon: "/icons/java.svg" },
+  { name: "Jira", icon: "/icons/jira.svg" },
+  { name: "Kafka", icon: "/icons/kafka.svg" },
+  { name: "Looker", icon: "/icons/looker-icon.svg" },
+  { name: "Matplotlib", icon: "/icons/matplotlib.svg" },
+  { name: "MySQL", icon: "/icons/mysql.svg" },
+  { name: "NumPy", icon: "/icons/numpy.svg" },
+  { name: "Pandas", icon: "/icons/pandas.svg" },
+  { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
+  { name: "Python", icon: "/icons/python.svg" },
+  { name: "PyTorch", icon: "/icons/pytorch.svg" },
+  { name: "Scala", icon: "/icons/scala.svg" },
+  { name: "Seaborn", icon: "/icons/seaborn.svg" },
+  { name: "Snowflake", icon: "/icons/snowflake.svg" },
+  { name: "SonarCloud", icon: "/icons/sonarcloud.svg" },
+  { name: "SonarLint", icon: "/icons/sonarlint-icon.svg" },
+  { name: "Tableau", icon: "/icons/tableau-icon.svg" },
+  { name: "TensorFlow", icon: "/icons/tensorflow.svg" },
+  { name: "Terraform", icon: "/icons/terraform.svg" },
 ];
 
 const containerVariants = {

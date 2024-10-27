@@ -15,7 +15,6 @@ export default function HomePage() {
   const [currentRole, setCurrentRole] = useState(0);
   const [initialLoad, setInitialLoad] = useState(true);
 
-  // Change role every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prevRole) => (prevRole + 1) % roles.length);
@@ -26,7 +25,7 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <main className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
+      <main className="flex flex-col items-center justify-center min-h-screen bg-[var(--background)] text-[var(--foreground)]">
         {/* Animated Introduction */}
         <div className="text-center">
           {/* "Hello World!" with motion effect */}
@@ -47,14 +46,18 @@ export default function HomePage() {
             transition={{ duration: 1.5 }}
           >
             My name is{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "linear-gradient(to right, #2AD640, #56E06F)"
+              }}
+            >
               Bharath Velamala
             </span>
           </motion.h1>
 
           {/* Smooth Role Transition Section */}
           <div className="text-2xl sm:text-3xl lg:text-4xl mt-4 flex items-center justify-center">
-            {/* Add motion for the entire "and, I am a" + role section */}
             <motion.div
               className="flex items-center"
               initial={{ opacity: 0, y: 20 }}
@@ -71,7 +74,7 @@ export default function HomePage() {
                     animate="visible"
                     exit="exit"
                     transition={{ duration: 0.5 }}
-                    className="text-yellow-400"
+                    className="text-[var(--accent-color)]"
                   >
                     {roles[currentRole]}
                   </motion.span>
@@ -85,11 +88,11 @@ export default function HomePage() {
             <a
               href="/files/Bharath_Velamala_Resume_DE.pdf"
               download="Bharath_Velamala_Resume_DE.pdf"
-              className="relative inline-block text-lg font-semibold text-white px-8 py-4 rounded-lg shadow-lg transition-transform transform-gpu hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300"
+              className="relative inline-block text-lg font-semibold text-[var(--foreground)] px-8 py-4 rounded-lg shadow-lg transition-transform transform-gpu hover:scale-105 hover:shadow-2xl focus:outline-none"
               style={{
-                background: "linear-gradient(to right, transparent, black, transparent)",
+                background: "#1B2631",
                 border: "2px solid",
-                borderImage: "linear-gradient(to right, silver, gold) 1",
+                borderImage: "#2AD640",
               }}
             >
               <span className="absolute inset-0 opacity-40 bg-gradient-to-br from-transparent via-black to-transparent blur-lg rounded-lg -z-10"></span>
