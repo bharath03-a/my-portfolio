@@ -47,3 +47,8 @@ button:hover {
     text-wrap: balance;
   }
 }
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent-color); }
+}

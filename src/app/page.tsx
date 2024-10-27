@@ -7,28 +7,53 @@ const roles = ["a Data Engineer", "a Data Science Learner", "a Machine Learning 
 
 const roleVariants = {
   hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   exit: { opacity: 0, y: -10 },
 };
 
 export default function HomePage() {
   const [currentRole, setCurrentRole] = useState(0);
-  const [initialLoad, setInitialLoad] = useState(true);
-
+  const [displayedRole, setDisplayedRole] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prevRole) => (prevRole + 1) % roles.length);
-      setInitialLoad(false); // Disable initial load after the first change
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+    const role = roles[currentRole];
+    let index = 0;
+    
+    const typeInterval = setInterval(() => {
+      if (index < role.length) {
+        setDisplayedRole((prev) => prev + role[index]);
+        index++;
+      } else {
+        clearInterval(typeInterval);
+        setIsTyping(false);
+
+        // Start erasing after a short delay to let the full role display
+        setTimeout(() => {
+          const eraseInterval = setInterval(() => {
+            setDisplayedRole((prev) => {
+              const newRole = prev.slice(0, -1);
+              if (newRole.length === 0) {
+                clearInterval(eraseInterval);
+                setCurrentRole((prev) => (prev + 1) % roles.length);
+                setIsTyping(true);
+              }
+              return newRole;
+            });
+          }, 150);
+        }, 1000); // Delay before starting to erase (adjust as needed)
+      }
+    }, 150);
+
+    return () => {
+      clearInterval(typeInterval);
+    };
+  }, [currentRole]);
 
   return (
     <Layout>
       <main className="flex flex-col items-center justify-center min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-        {/* Animated Introduction */}
         <div className="text-center">
-          {/* "Hello World!" with motion effect */}
           <motion.h1
             className="text-4xl sm:text-3xl lg:text-5xl font-bold"
             initial={{ opacity: 0, y: -50 }}
@@ -38,7 +63,6 @@ export default function HomePage() {
             Hello World!
           </motion.h1>
 
-          {/* "My name is Bharath Velamala" with motion effect */}
           <motion.h1
             className="text-5xl sm:text-4xl lg:text-6xl font-bold mt-4"
             initial={{ opacity: 0, y: -50 }}
@@ -56,7 +80,6 @@ export default function HomePage() {
             </span>
           </motion.h1>
 
-          {/* Smooth Role Transition Section */}
           <div className="text-2xl sm:text-3xl lg:text-4xl mt-4 flex items-center justify-center">
             <motion.div
               className="flex items-center"
@@ -74,16 +97,23 @@ export default function HomePage() {
                     animate="visible"
                     exit="exit"
                     transition={{ duration: 0.5 }}
+                    style={{
+                      display: 'inline-block',
+                      borderBottom: '2px solid var(--accent-color)',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      borderRight: isTyping ? '2px solid var(--accent-color)' : 'none',
+                      animation: isTyping ? 'blink-caret 0.75s step-end infinite' : 'none'
+                    }}
                     className="text-[var(--accent-color)]"
                   >
-                    {roles[currentRole]}
+                    {displayedRole}
                   </motion.span>
                 </AnimatePresence>
               </div>
             </motion.div>
           </div>
 
-          {/* Cool Resume Download Button with Silver/Golden Border */}
           <div className="mt-8">
             <a
               href="/files/Bharath_Velamala_Resume_DE.pdf"
@@ -92,7 +122,7 @@ export default function HomePage() {
               style={{
                 background: "#1B2631",
                 border: "2px solid",
-                borderImage: "#2AD640",
+                borderColor: "#2AD640",
               }}
             >
               <span className="absolute inset-0 opacity-40 bg-gradient-to-br from-transparent via-black to-transparent blur-lg rounded-lg -z-10"></span>
